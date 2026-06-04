@@ -35842,3 +35842,89 @@ body:is(.lifeos-theme-night-owl, .lifeos-theme-anime-moonlit, .lifeos-theme-midn
   }
 }
 /* Life OS local R15 generic chat composer anchor end */
+
+/* Life OS chat skill picker expanded scroll fix start
+   The compact chat header caps the controls height in desktop screenshots.
+   When the Skill picker is open, let the controls breathe and keep scrolling
+   inside the picker itself so all categories remain reachable. */
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker {
+  max-height: min(64svh, 620px) !important;
+  overflow: visible !important;
+}
+
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-chat-skill-control.is-expanded,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-chat-skill-control.is-expanded,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-chat-skill-control.is-expanded {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker {
+  max-height: min(48svh, 520px) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  padding-right: 14px !important;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker-tools,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker-tools,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker-tools {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 0 0 8px;
+  background: var(--lifeos-surface);
+}
+
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar {
+  width: 12px;
+}
+
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-track,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-track,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-thumb,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-thumb,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-thumb {
+  min-height: 44px;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lifeos-text) 24%, transparent);
+  background-clip: padding-box;
+}
+
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-thumb:hover,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-thumb:hover,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--lifeos-primary) 44%, transparent);
+  background-clip: padding-box;
+}
+
+@media (min-width: 1101px) and (max-height: 980px) {
+  .lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker,
+  .workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker,
+  .lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker {
+    max-height: min(58svh, 540px) !important;
+  }
+
+  .lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker,
+  .workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker,
+  .lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker {
+    max-height: min(44svh, 440px) !important;
+  }
+}
+/* Life OS chat skill picker expanded scroll fix end */
