@@ -25225,6 +25225,51 @@ body.lifeos-theme-liquid-glass .lifeos-chat-view-host .lifeos-main.lifeos-chat-m
   justify-content: flex-end;
 }
 
+.lifeos-knowledge-section-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.lifeos-knowledge-section-head > .lifeos-card-title {
+  min-width: 0;
+}
+
+.lifeos-knowledge-section-actions {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.lifeos-knowledge-section-toggle {
+  white-space: nowrap;
+}
+
+.lifeos-knowledge-collapsed-hint {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 2px;
+  padding: 10px 12px;
+  border: 1px dashed var(--lifeos-border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--lifeos-surface-soft) 82%, transparent);
+  color: var(--lifeos-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.lifeos-knowledge-collapsed-hint svg {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+}
+
 .lifeos-knowledge-library-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -25359,22 +25404,22 @@ body.lifeos-theme-liquid-glass .lifeos-chat-view-host .lifeos-main.lifeos-chat-m
   resize: vertical;
 }
 
-body.is-mobile .lifeos-knowledge-library-head,
-.lifeos-root.lifeos-is-mobile-runtime .lifeos-knowledge-library-head,
-.lifeos-root.lifeos-is-narrow-pane .lifeos-knowledge-library-head {
+body.is-mobile :is(.lifeos-knowledge-library-head, .lifeos-knowledge-section-head),
+.lifeos-root.lifeos-is-mobile-runtime :is(.lifeos-knowledge-library-head, .lifeos-knowledge-section-head),
+.lifeos-root.lifeos-is-narrow-pane :is(.lifeos-knowledge-library-head, .lifeos-knowledge-section-head) {
   display: grid !important;
   grid-template-columns: 1fr !important;
 }
 
-body.is-mobile .lifeos-knowledge-library-actions,
-.lifeos-root.lifeos-is-mobile-runtime .lifeos-knowledge-library-actions,
-.lifeos-root.lifeos-is-narrow-pane .lifeos-knowledge-library-actions {
+body.is-mobile :is(.lifeos-knowledge-library-actions, .lifeos-knowledge-section-actions),
+.lifeos-root.lifeos-is-mobile-runtime :is(.lifeos-knowledge-library-actions, .lifeos-knowledge-section-actions),
+.lifeos-root.lifeos-is-narrow-pane :is(.lifeos-knowledge-library-actions, .lifeos-knowledge-section-actions) {
   justify-content: stretch !important;
 }
 
-body.is-mobile .lifeos-knowledge-library-actions .lifeos-btn,
-.lifeos-root.lifeos-is-mobile-runtime .lifeos-knowledge-library-actions .lifeos-btn,
-.lifeos-root.lifeos-is-narrow-pane .lifeos-knowledge-library-actions .lifeos-btn {
+body.is-mobile :is(.lifeos-knowledge-library-actions, .lifeos-knowledge-section-actions) :is(.lifeos-btn, .lifeos-button),
+.lifeos-root.lifeos-is-mobile-runtime :is(.lifeos-knowledge-library-actions, .lifeos-knowledge-section-actions) :is(.lifeos-btn, .lifeos-button),
+.lifeos-root.lifeos-is-narrow-pane :is(.lifeos-knowledge-library-actions, .lifeos-knowledge-section-actions) :is(.lifeos-btn, .lifeos-button) {
   width: 100%;
 }
 
@@ -30441,7 +30486,8 @@ body.lifeos-theme-night-owl .lifeos-root :is(
   .lifeos-llmwiki-long-sources,
   .lifeos-knowledge-row,
   .lifeos-llmwiki-stat,
-  .lifeos-knowledge-library-item
+  .lifeos-knowledge-library-item,
+  .lifeos-knowledge-collapsed-hint
 ),
 body.lifeos-theme-night-owl .lifeos-root .lifeos-knowledge-main :is(
   .lifeos-hero,
@@ -30454,7 +30500,8 @@ body.lifeos-theme-night-owl .lifeos-root .lifeos-knowledge-main :is(
   .lifeos-llmwiki-long-sources,
   .lifeos-knowledge-row,
   .lifeos-llmwiki-stat,
-  .lifeos-knowledge-library-item
+  .lifeos-knowledge-library-item,
+  .lifeos-knowledge-collapsed-hint
 ) {
   border-color: rgba(141, 162, 255, 0.22) !important;
   background:
@@ -30486,7 +30533,8 @@ body.lifeos-theme-night-owl .lifeos-root .lifeos-knowledge-main :is(
   .lifeos-knowledge-library-meta,
   .lifeos-history-subtitle,
   .lifeos-knowledge-snippet,
-  .lifeos-knowledge-snippet *
+  .lifeos-knowledge-snippet *,
+  .lifeos-knowledge-collapsed-hint
 ),
 body.lifeos-theme-night-owl .lifeos-root .lifeos-knowledge-main :is(
   p,
@@ -30494,7 +30542,8 @@ body.lifeos-theme-night-owl .lifeos-root .lifeos-knowledge-main :is(
   .lifeos-knowledge-library-meta,
   .lifeos-history-subtitle,
   .lifeos-knowledge-snippet,
-  .lifeos-knowledge-snippet *
+  .lifeos-knowledge-snippet *,
+  .lifeos-knowledge-collapsed-hint
 ) {
   color: #c9d4e6 !important;
 }
