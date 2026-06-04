@@ -35885,6 +35885,28 @@ body:is(.lifeos-theme-night-owl, .lifeos-theme-anime-moonlit, .lifeos-theme-midn
   background: var(--lifeos-surface);
 }
 
+.lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-expand-button,
+.workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-expand-button,
+.lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-expand-button {
+  position: relative;
+  z-index: 4;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid var(--lifeos-border-soft, var(--lifeos-border));
+  border-radius: 999px;
+  background: var(--lifeos-surface);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--lifeos-text) 9%, transparent);
+  pointer-events: auto;
+}
+
+.lifeos-skill-picker-tool-actions {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
 .lifeos-chat-view-host .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar,
 .workspace-leaf-content[data-type="personal-life-system-chat"] .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar,
 .lifeos-root.lifeos-chat-root .lifeos-chat-controls.has-expanded-skill-picker .lifeos-skill-picker::-webkit-scrollbar {
