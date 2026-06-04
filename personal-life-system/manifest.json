@@ -1,0 +1,11 @@
+{
+  "id": "personal-life-system",
+  "name": "Life OS",
+  "version": "0.2.0",
+  "minAppVersion": "1.5.0",
+  "description": "A local-first personal life system for AI diary, tasks, memory, review and exam preparation.",
+  "author": "Xiaoqiang Huang",
+  "authorUrl": "https://github.com/Xiaoqiang-Huang",
+  "fundingUrl": "",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,17 @@
+# Life OS release package safety ignores
+**/data.json
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*secret*
+**/*token*
+**/*credential*
+**/__pycache__/
+**/tmp/
+**/output/
+*.log
+.DS_Store
+Thumbs.db
+.codex/
+.agents/
